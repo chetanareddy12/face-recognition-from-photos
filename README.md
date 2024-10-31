@@ -1,4 +1,4 @@
-***To install Python, follow these steps based on your operating system:***
+***1. To install Python, follow these steps based on your operating system:***
 
 ***For Windows:***
 Download the Installer:
@@ -45,7 +45,7 @@ In the terminal, type:
 python3 --version
 
 
-***To install Node.js, follow these steps based on your operating system:***
+***2. To install Node.js, follow these steps based on your operating system:***
 
 1. Using the Official Node.js Installer (All Platforms)
 Download Node.js:
@@ -64,14 +64,9 @@ npm --version
 You should see version numbers for both Node.js and npm.
 
 
-***Install Flask and face_recognition***
+***3. Install Flask and face_recognition***
 
 pip install flask face_recognition flask-cors
-
-***Install nodejs http-server package to run static files locally***
-npm install -g http-server
-
-***Start the Flask server: python app.py***
 
 If you see an error message saying "CMake is not installed on your system!" while trying to build or install a package, it means that your system lacks the cmake tool, which is often required for building software from source.
 
@@ -92,8 +87,13 @@ brew install cmake
 Download the CMake installer from the official CMake website.
 Run the installer and follow the instructions, making sure to add CMake to your system PATH during installation.
 
+
+***4. Start the Flask server: python app.py***
+
 update IMAGE_DIR = "/Users/your_username/Desktop/images_directory"  # Replace 'your_username' with your actual username(ex: mac os)
 
+***5. Install nodejs http-server package to run static files locally***
+npm install -g http-server
 
-***start index.html:***
+***6. start index.html:***
 Go to folder and run "http-server"
