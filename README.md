@@ -93,6 +93,7 @@ Run the installer and follow the instructions, making sure to add CMake to your 
 update IMAGE_DIR = "/Users/your_username/Desktop/images_directory"  # Replace 'your_username' with your actual username(ex: mac os)
 
 ***5. Install nodejs http-server package to run static files locally***
+
 npm install -g http-server
 
 ***6. start index.html:***
