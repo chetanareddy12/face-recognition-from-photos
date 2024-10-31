@@ -15,6 +15,10 @@ Open a terminal (Command Prompt on Windows or Terminal on macOS/Linux) and type:
 git --version
 You should see the Git version number if it’s installed correctly.
 
+open terminal and run below cmd to clone the code
+
+git clone https://github.com/chetanareddy12/face-recognition-from-photos.git
+
 
 ***1. To install Python, follow these steps based on your operating system:***
 
