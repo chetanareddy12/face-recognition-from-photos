@@ -86,7 +86,7 @@ npm --version
 You should see version numbers for both Node.js and npm.
 
 
-***3. Install Flask and face_recognition***
+***3. Install Flask, face_recognition and flask-cors using pip:***
 
 pip install flask face_recognition flask-cors
 
@@ -114,7 +114,7 @@ Run the installer and follow the instructions, making sure to add CMake to your 
 
 update IMAGE_DIR = "/Users/your_username/Desktop/images_directory"  # Replace 'your_username' with your actual username(ex: mac os)
 
-***5. Install nodejs http-server package to run static files locally***
+***5. Install nodejs http-server package to run static files locally: run below  cmd:***
 
 npm install -g http-server
 
