@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition from Camera</title>
+</head>
+<body>
+    <h2>Capture and Compare Face from Camera</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; height: 100vh;">
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+        <p id="result"></p>
+    </div>
+    <button id="captureButton">Capture and Compare</button>
+
+    <script>
+        // Start video stream from the camera
+        const video = document.getElementById('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => video.srcObject = stream)
+            .catch(error => console.error("Error accessing camera:", error));
+
+        // Capture image from camera and send to backend for comparison
+        document.getElementById('captureButton').addEventListener('click', async () => {
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert the canvas image to a blob
+            canvas.toBlob(async blob => {
+                const formData = new FormData();
+                formData.append("image", blob, "capture.jpg");
+
+                // Send image to backend for comparison
+                const response = await fetch('http://127.0.0.1:5000/compare', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('result').innerText = data.matches.length
+                        ? `Matches found: ${data.matches.join(", ")}`
+                        : "No matches found.";
+                } else {
+                    const errorData = await response.json();
+                    document.getElementById('result').innerText = errorData.error || "Error occurred.";
+                }
+            }, 'image/jpeg');
+        });
+    </script>
+</body>
+</html>
