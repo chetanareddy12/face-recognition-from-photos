@@ -1,3 +1,21 @@
+*** 0. To install Git, follow these steps based on your operating system:***
+
+Using the Official Installer (All Platforms)
+Download Git:
+
+Go to the Git website.
+Download the installer for your operating system.
+Run the Installer:
+
+Open the downloaded file and run the installer.
+Follow the prompts, and use the default settings unless you have specific needs.
+Verify Installation:
+
+Open a terminal (Command Prompt on Windows or Terminal on macOS/Linux) and type:
+git --version
+You should see the Git version number if it’s installed correctly.
+
+
 ***1. To install Python, follow these steps based on your operating system:***
 
 ***For Windows:***
